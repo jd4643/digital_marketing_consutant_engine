@@ -63,6 +63,7 @@ public class StrategyService {
         try {
             return objectMapper.writeValueAsString(value);
         } catch (JsonProcessingException e) {
+            log.warn("Failed to serialize strategy history payload", e);
             return "{}";
         }
     }
